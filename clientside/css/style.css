@@ -1,0 +1,79 @@
+*{
+    padding: 0px;
+    margin: 0;
+    
+}
+.container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to bottom right, rgb(9, 5, 122), rgb(0, 204, 255));
+}
+.container h1{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    padding: 40px;
+    text-shadow:2px 2px 5px rgb(2, 6, 91);
+}
+.container .addbtn{
+    border: none;
+    background-color: rgb(14, 14, 237);
+    color: white;
+    padding: 7px;
+    border-radius: 5px;
+    margin-left: 1100px;
+}
+.container .addbtn:hover{
+    background-color: rgb(5, 5, 163);
+}
+.container2{
+    margin: 40px 20px 0px 140px;
+}
+
+.container2 input{
+    opacity: 70%;
+    padding: 5px;
+    border-color: rgb(29, 29, 135);
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.container2 .editbtn{
+    border: none;
+    background-color: royalblue;
+    color: white;
+    border-radius: 5px;
+    margin-right: 10px;
+    padding: 7px;
+}
+.container2 .editbtn:hover{
+    background-color: rgb(0, 0, 255);
+}
+.container2 .savebtn{
+    border: none;
+    background-color: rgb(8, 188, 59);
+    color: white;
+    border-radius: 5px;
+    margin-right: 10px;
+    padding: 7px;
+}
+.container2 .savebtn:hover{
+    background-color: rgb(0, 153, 51);
+}
+.container2 .deletebtn{
+    border: none;
+    background-color: rgb(227, 24, 24);
+    color: white;
+    border-radius: 5px;
+    margin-right: 10px;
+    padding: 7px;
+}
+.container2 .deletebtn:hover{
+    background-color: brown;
+}
+.container img{
+    position: absolute;
+    width: 400px;
+    margin: 75px;
+    opacity: 50%;
+}

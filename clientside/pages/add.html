@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/add.css">
+    <title>Add Donor</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Add User</h1>
+        <div class="container2">
+            <form action="/submit" method="post">
+        <label for="">Name:</label>
+        <input type="text" name="Name" id="Name">
+
+        <label for="">Email:</label>
+        <input type="text" name="Email" id="Email">
+
+        <label for="">Phone No:</label>
+        <input type="text" name="Phone" id="Phone"> 
+
+        <label for="">Blood Group:</label>
+        <select name="Blood" id="Blood">
+            <option value="">Select Blood Group</option>
+            <option value="">A+</option>
+            <option value="">B+</option>
+            <option value="">AB+</option>
+            <option value="">AB-</option>
+            <option value="">B-</option>
+            <option value="">O+</option>
+            <option value="">OB-</option>
+        </select>
+
+        <label for="">Gender:</label>
+        <div class="gender">
+            <input type="radio" id="html" name="gender" value="HTML">
+         <label for="html">Male</label>
+         <input type="radio" id="css" name="gender" value="CSS">
+         <label for="css">Female</label>
+         <input type="radio" id="javascript" name="gender" value="JavaScript">
+         <label for="javascript">Other</label>
+        </div>
+        <button class="button"><span>Submit</span></button>
+    </form>
+    </div>
+    <img src="./img/blood.png" alt="">
+    </div>
+</body>
+</html>
