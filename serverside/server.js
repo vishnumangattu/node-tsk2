@@ -1,11 +1,12 @@
+const PORT=3005;
 const http=require("http");
 const fs=require("fs");
 const url=require("url");
-const { log } = require("console");
+const { log, error } = require("console");
 const queryString=require("querystring");
 const {MongoClient}=require("mongodb");
 const client=new MongoClient("mongodb://127.0.0.1:27017/");
-const app=http.createServer((req,res)=>{
+const app=http.createServer(async(req,res)=>{
     const db=client.db("bloodbank");
     const collection=db.collection("donor");
     const path=url.parse(req.url);
@@ -60,6 +61,20 @@ if (req.method =="POST" && path.pathname=="/submit")
             res.writeHead(200,{"Content-Type":"text/html"});
         res.end(fs.readFileSync("../clientside/pages/index.html"));
         }
-        
+      if(path.pathname=="/getdonors"&& req.method=="GET")
+        {
+            const data=await collection.find().toArray();
+            const maindata=JSON.stringify(data);
+            res.writeHead(200,{"Content-Type":"text/json"});
+        res.end(maindata);
+            
+        }  
 });
-app.listen(3005);
+client.connect().then(()=>{
+    console.log("database connected");
+    app.listen(PORT,()=>{
+        console.log(`http://localhost:${PORT}`);
+        
+    });
+}).catch((error)=>{console.log(error);
+})
