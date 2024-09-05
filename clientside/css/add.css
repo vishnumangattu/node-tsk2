@@ -6,23 +6,22 @@
     position: relative;
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(to bottom right, rgb(9, 5, 122), rgb(0, 204, 255));
 }
 .container h1{
-    color: white;
+    color: rgb(0, 0, 0);
     text-align: center;
     padding: 30px;
 }
 .container label{
     display: block;
-    color: white;
+    color: rgb(0, 0, 0);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding: 10px 5px;
 }
 .container input{
     padding: 10px 50px;
     border-radius: 5px;
-    background-color: rgba(240, 248, 255, 0.547);
+    background-color: rgba(151, 228, 174, 0.547);
     border: none;
     margin-left: 40px;
 }
@@ -40,8 +39,8 @@ select{
     
     padding: 10px 50px;
     border-radius: 5px;
-    color: white;
-    background-color: rgba(240, 248, 255, 0.547);
+    color: rgb(0, 0, 0);
+    background-color: rgba(110, 197, 129, 0.547);
     border: none;
     width: 265px;
     margin-left: 40px;
@@ -52,7 +51,7 @@ option{
 .gender label{
     display: inline;
     margin-right: -30px;
-    color: white;
+    color: rgb(0, 0, 0);
 }
  .gender .input{
     height: 15px;
@@ -65,7 +64,7 @@ option{
     border-radius: 4px;
     background-color: #1e3bf4;
     border: none;
-    color: #FFFFFF;
+    color: #000000;
     text-align: center;
     font-size: 18px;
     padding: 7px;

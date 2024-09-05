@@ -1,10 +1,10 @@
-const PORT=3005;
+const PORT=3008;
 const http=require("http");
 const fs=require("fs");
 const url=require("url");
 const { log, error } = require("console");
 const queryString=require("querystring");
-const {MongoClient}=require("mongodb");
+const {MongoClient, ObjectId}=require("mongodb");
 const client=new MongoClient("mongodb://127.0.0.1:27017/");
 const app=http.createServer(async(req,res)=>{
     const db=client.db("bloodbank");
@@ -68,7 +68,27 @@ if (req.method =="POST" && path.pathname=="/submit")
             res.writeHead(200,{"Content-Type":"text/json"});
         res.end(maindata);
             
-        }  
+        }
+        if(req.method =="DELETE" && path.pathname=="/delete")
+        {
+            let body="";
+            req.on("data",(chunks)=>
+        {
+            body+=chunks.tostring();
+            console.log(body);
+            
+        });
+        req.on("end",async()=>{
+            let _id=new ObjectId(body);
+            collection.deleteOne({_id}).then(()=>{
+                res.writeHead(200,{"Content-Type":"text/plain"});
+                res.end("success")
+            }).catch(()=>{
+                res.writeHead(404,{"Content-Type":"text/plain"});
+                res.end("fail")
+            })
+        });
+        }
 });
 client.connect().then(()=>{
     console.log("database connected");

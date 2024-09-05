@@ -1,5 +1,5 @@
 async function Display() {
-    const res= await fetch("http://localhost:3005/getdonors");
+    const res= await fetch("http://localhost:3008/getdonors");
     const donors=await res.json();
     str=``;
     donors.map((donor)=>{  
@@ -11,10 +11,21 @@ async function Display() {
            <input type="text" name="gender" value=${donor.gender} id="gender">
            <button class="editbtn">Edit</button>
            <button class="savebtn">Save</button>
-           <button class="deletebtn">Delete</button>
-        </div>`
+           <button class="deletebtn" onClick="handleDelete(${donor._id})">Delete </button>
+        </div><br><br>`
     });
     document.getElementById("container2").innerHTML=str;
 }
 
 Display();
+
+async  function handleDelete(id)
+{
+const res=await fetch("http://localhost:3008/delete",{
+    method:"delete",
+    headers:{"Content-Type":"text/plain"},
+    body:id
+});
+ res.status==200?alert(data):alert(data)
+ Display();
+}
